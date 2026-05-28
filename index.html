@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celeste Dragons - Modo Leitura</title>
+    <style>
+        /* CSS para um visual Dark Mode confortável */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Georgia', serif; /* Fonte excelente para leitura */
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 🛡️ TRAVA CSS: Impede seleção de texto */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a2a;
+        }
+
+        h1 {
+            color: #ffb74d; /* Um tom dourado para os dragões */
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #ffa726;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .copyright-header {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.15rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Direitos Autorais bem visíveis no topo -->
+        <div class="copyright-header">
+            © 2026 Jemima Keise Santos Cruz. Todos os direitos reservados.
+            <br>Plágio é crime (Lei nº 9.610/98).
+        </div>
+
+        <h1>Celeste Dragons</h1>
+        <h2>Capítulo 1: O Renascer</h2>
+
+        <!-- Onde vai entrar o texto do seu livro -->
+        <div class="texto-livro">
+            <p>— Como você sabe do Herdeiro? — Eu minto fingindo... (Coloque o texto do capítulo aqui)</p>
+            <p>Próximo parágrafo do seu livro...</p>
+        </div>
+
+        <footer>
+            Desenvolvido com 🖥️ e 🐉 por Jemima Keise
+        </footer>
+    </div>
+
+    <script>
+        // 🛡️ TRAVA JS: Impede clique com botão direito
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // 🛡️ TRAVA JS: Bloqueia Ctrl+C, Ctrl+A, Ctrl+S e Ctrl+U
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'a' || e.key === 'u' || e.key === 's')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
