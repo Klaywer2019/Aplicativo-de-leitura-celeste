@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celeste Dragons - Modo Leitura</title>
+    <title>Celeste Dragons - Modo Leitura Kindle</title>
     <style>
-        /* CSS para um visual Dark Mode confortável */
         body {
             background-color: #121212;
             color: #e0e0e0;
-            font-family: 'Georgia', serif; /* Fonte excelente para leitura */
+            font-family: 'Georgia', serif;
             line-height: 1.8;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
             /* 🛡️ TRAVA CSS: Impede seleção de texto */
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -24,81 +25,159 @@
         }
 
         .container {
-            max-width: 700px;
+            max-width: 650px;
             width: 100%;
             background-color: #1e1e1e;
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             border: 1px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
+        /* 👑 Título agora é o protagonista absoluto topo! */
         h1 {
-            color: #ffb74d; /* Um tom dourado para os dragões */
+            color: #ffb74d; 
             text-align: center;
             font-size: 2.2rem;
+            margin-top: 10px;
             margin-bottom: 5px;
         }
 
         h2 {
             color: #ffa726;
             text-align: center;
-            font-size: 1.4rem;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
             font-weight: normal;
         }
 
-        .copyright-header {
-            font-size: 0.85rem;
-            color: #888;
-            text-align: center;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-
-        p {
-            margin-bottom: 20px;
+        /* Área do texto (Estilo Kindle) */
+        .conteudo-pagina {
+            min-height: 300px;
+            font-size: 1.2rem;
             text-align: justify;
-            font-size: 1.15rem;
+            margin-bottom: 20px;
         }
 
+        /* Esconde as páginas que não estão ativas */
+        .paragrafo-livro {
+            display: none;
+        }
+        .paragrafo-livro.ativo {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* 🎮 Navegação Estilo E-reader */
+        .controles-kindle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .btn-navegacao {
+            background-color: #ffb74d;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-navegacao:disabled {
+            background-color: #444;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        .progresso {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* 🛡️ Direitos autorais protegidos e jogados para o final de tudo */
         footer {
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: #666;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Direitos Autorais bem visíveis no topo -->
-        <div class="copyright-header">
-            © 2026 Jemima Keise Santos Cruz. Todos os direitos reservados.
-            <br>Plágio é crime (Lei nº 9.610/98).
+        <header>
+            <h1>Celeste Dragons</h1>
+            <h2>Capítulo 1: O Renascer</h2>
+        </header>
+
+        <!-- 📖 SISTEMA DE PÁGINAS (Cada <p> vira uma tela/página do Kindle) -->
+        <div class="conteudo-pagina" id="areaTexto">
+            <p class="paragrafo-livro ativo">— Como você sabe do Herdeiro? — Eu minto fingindo demência, mas por dentro estou em pânico. Estava no script para que isso não acontecesse!</p>
+            <p class="paragrafo-livro">"Aprendi ao longo da história secreta que todos têm um segredo obscuro do passado e que isso os consome no final. Mas eu não posso demonstrar que estou com medo..." — O olhar dele parecia ler a minha mente enquanto a brisa soprava por entre as ruínas do templo ancestral.</p>
+            <p class="paragrafo-livro">"Fico feliz de saber que tenho alguém com quem se preocupar, que não vai me abandonar..." — Quando ela terminou de falar isso, sorriu, as lágrimas banharam seu rosto, mas o sorriso continuou. E foi ali que eu prometi de forma silenciosa para o universo que faria tudo para manter aquele sorriso intacto.</p>
+            <p class="paragrafo-livro">Ele parecia com medo de todas as minhas ações e se manteve focado, sem tirar os olhos de mim. Ele sabia que se cometesse um erro mínimo ali, os dragões celestes iriam acordar do seu repouso milenar.</p>
         </div>
 
-        <h1>Celeste Dragons</h1>
-        <h2>Capítulo 1: O Renascer</h2>
-
-        <!-- Onde vai entrar o texto do seu livro -->
-        <div class="texto-livro">
-            <p>— Como você sabe do Herdeiro? — Eu minto fingindo... (Coloque o texto do capítulo aqui)</p>
-            <p>Próximo parágrafo do seu livro...</p>
+        <!-- Navegação inferior -->
+        <div class="controles-kindle">
+            <button class="btn-navegacao" id="btnVoltar" onclick="mudarPagina(-1)" disabled>Voltar</button>
+            <span class="progresso" id="indicadorProgresso">Pág. 1 de 4</span>
+            <button class="btn-navegacao" id="btnAvancar" onclick="mudarPagina(1)">Avançar</button>
         </div>
 
         <footer>
-            Desenvolvido com 🖥️ e 🐉 por Jemima Keise
+            © 2026 Jemima Keise Santos Cruz. Todos os direitos reservados.
+            <br>Plágio é crime (Lei nº 9.610/98).
+            <br><span style="color: #444;">Desenvolvido com 🖥️ e 🐉</span>
         </footer>
     </div>
 
     <script>
-        // 🛡️ TRAVA JS: Impede clique com botão direito
+        // Lógica do App de Leitura Kindle
+        let paginaAtual = 0;
+        const paragrafos = document.querySelectorAll('.paragrafo-livro');
+        const totalPaginas = paragrafos.length;
+
+        function atualizarInterface() {
+            // Esconde todos os parágrafos e mostra só o da página atual
+            paragrafos.forEach((p, index) => {
+                if(index === paginaAtual) {
+                    p.classList.add('ativo');
+                } else {
+                    p.classList.remove('ativo');
+                }
+            });
+
+            // Atualiza o texto do progresso (ex: Pág 1 de 4)
+            document.getElementById('indicadorProgresso').innerText = `Pág. ${paginaAtual + 1} de ${totalPaginas}`;
+
+            // Controla a ativação dos botões
+            document.getElementById('btnVoltar').disabled = (paginaAtual === 0);
+            document.getElementById('btnAvancar').disabled = (paginaAtual === totalPaginas - 1);
+        }
+
+        function mudarPagina(direcao) {
+            paginaAtual += direcao;
+            atualizarInterface();
+        }
+
+        // 🛡️ ANTICÓPIA: Impede clique com botão direito
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // 🛡️ TRAVA JS: Bloqueia Ctrl+C, Ctrl+A, Ctrl+S e Ctrl+U
+        // 🛡️ ANTICÓPIA: Bloqueia Ctrl+C, Ctrl+A, Ctrl+S e Ctrl+U
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && (e.key === 'c' || e.key === 'a' || e.key === 'u' || e.key === 's')) {
                 e.preventDefault();
