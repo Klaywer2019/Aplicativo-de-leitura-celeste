@@ -183,6 +183,21 @@
                 e.preventDefault();
             }
         });
+
+document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    const textoProtegido = window.getSelection().toString() + 
+        "\n\n© 2026 Jemima Keise Santos Cruz. Obra original protegida por direitos autorais (Lei nº 9.610/98). Leia o original em: https://klaywer2019.github.io/Aplicativo-de-leitura-celeste/";
+    e.clipboardData.setData('text/plain', textoProtegido);
+});
+
+window.addEventListener('keyup', (e) => {
+    if (e.key === 'PrintScreen') {
+        navigator.clipboard.writeText(''); // Limpa a área de transferência na hora
+        alert('Capturas de tela não são permitidas para proteger os direitos autorais de Celeste Dragons.');
+    }
+});
+
     </script>
 </body>
 </html>
