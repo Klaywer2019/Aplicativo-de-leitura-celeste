@@ -50,20 +50,32 @@
             margin-bottom: 15px;
         }
 
-        /* 📱 MENU SELETOR DE CAPÍTULOS ESTILOSO */
+        /* 📱 MENU SELETOR DE CAPÍTULOS ESTILOSO E CUSTOMIZADO */
         .seletor-capitulo {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
             background-color: #2a2a2a;
             color: #ffb74d;
-            border: 1px solid #444;
-            padding: 8px 15px;
+            border: 1px solid #ffb74d; /* Borda dourada combinando com o H1 */
+            padding: 10px 35px 10px 15px;
             font-size: 1rem;
             font-family: 'Georgia', serif;
             border-radius: 6px;
             cursor: pointer;
             outline: none;
-            width: 80%;
-            max-width: 300px;
+            width: 85%;
+            max-width: 320px;
             text-align: center;
+            /* Ícone de setinha dourada customizada para o mobile */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffb74d' d='M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        .seletor-capitulo option {
+            background-color: #2a2a2a;
+            color: #ffb74d;
         }
 
         /* Área do texto (Estilo Kindle) */
@@ -173,10 +185,21 @@
             areaTexto.innerHTML = ''; // Limpa o capítulo anterior
             paginaAtual = 0; // Volta para a página 1
 
-            // Escolhe qual lista de texto usar baseada no menu
-            if (numeroCapitulo === '1') textoDoCapituloAtual = textoCapitulo1;
-            if (numeroCapitulo === '2') textoDoCapituloAtual = textoCapitulo2;
-            if (numeroCapitulo === '3') textoDoCapituloAtual = textoCapitulo3;
+            // 🛠️ CORREÇÃO 1: Verificação de segurança caso as variáveis do arquivo JS venham vazias ou não existam
+            try {
+                if (numeroCapitulo === '1') textoDoCapituloAtual = typeof textoCapitulo1 !== 'undefined' ? textoCapitulo1 : [];
+                if (numeroCapitulo === '2') textoDoCapituloAtual = typeof textoCapitulo2 !== 'undefined' ? textoCapitulo2 : [];
+                if (numeroCapitulo === '3') textoDoCapituloAtual = typeof textoCapitulo3 !== 'undefined' ? textoCapitulo3 : [];
+            } catch (e) {
+                textoDoCapituloAtual = [];
+            }
+
+            // Se o capítulo estiver vazio, avisa na tela e evita o bug do 0
+            if (!textoDoCapituloAtual || textoDoCapituloAtual.length === 0) {
+                areaTexto.innerHTML = '<p style="text-align:center; color:#ffb74d;">Carregando texto ou capítulo indisponível...</p>';
+                atualizarInterface();
+                return;
+            }
 
             // Transforma os textos do arquivo JS em tags <p> dentro do HTML
             textoDoCapituloAtual.forEach((textoPagina, index) => {
@@ -194,6 +217,14 @@
             const paragrafos = document.querySelectorAll('.paragrafo-livro');
             const totalPaginas = paragrafos.length;
 
+            // 🛠️ CORREÇÃO 2: Se não houver páginas carregadas, evita mostrar "Pág. 1 de 0" e travar os botões
+            if (totalPaginas === 0) {
+                document.getElementById('indicadorProgresso').innerText = "Carregando...";
+                document.getElementById('btnVoltar').disabled = true;
+                document.getElementById('btnAvancar').disabled = true;
+                return;
+            }
+
             paragrafos.forEach((p, index) => {
                 if(index === paginaAtual) {
                     p.classList.add('ativo');
@@ -204,10 +235,18 @@
 
             document.getElementById('indicadorProgresso').innerText = `Pág. ${paginaAtual + 1} de ${totalPaginas}`;
             document.getElementById('btnVoltar').disabled = (paginaAtual === 0);
+            
+            // 🛠️ CORREÇÃO 3: Impede o botão Avançar de avançar infinitamente se chegar na última página real
             document.getElementById('btnAvancar').disabled = (paginaAtual === totalPaginas - 1);
         }
 
         function mudarPagina(direcao) {
+            const totalPaginas = document.querySelectorAll('.paragrafo-livro').length;
+            
+            // Trava de segurança para não ultrapassar os limites reais
+            if (direcao === 1 && paginaAtual >= totalPaginas - 1) return;
+            if (direcao === -1 && paginaAtual <= 0) return;
+
             paginaAtual += direcao;
             atualizarInterface();
         }
