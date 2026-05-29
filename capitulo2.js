@@ -1,5 +1,5 @@
 const textoCapitulo2 = [
-    "<h2>Capítulo 2 — A Mente de Combate e os Mapas</h2><br><br>Chegando na casa do Tayler, devo dizer que fiquei com um pouco de receio em bater na porta, já que tenho medo do pai dele — não pela aparência, mas pela sua postura extremamente rígida. Até porque, sendo chefe militar do pelotão, ele tem que ser rígido mesmo. Mas sua postura e a forma como ele trata o Tayler me dão um embrulho no estômago. Ou será que isso deve ser fome?",
+    "<h2>Capítulo 2 — Karmerus</h2><br><br>Chegando na casa do Tayler, devo dizer que fiquei com um pouco de receio em bater na porta, já que tenho medo do pai dele — não pela aparência, mas pela sua postura extremamente rígida. Até porque, sendo chefe militar do pelotão, ele tem que ser rígido mesmo. Mas sua postura e a forma como ele trata o Tayler me dão um embrulho no estômago. Ou será que isso deve ser fome?",
 
     "Depois de respirar fundo e tentar ficar calmo, bati na porta. Demorou um pouco até o Tayler atender, mas ele abriu a porta com a mesma postura rígida que tem quando está perto do pai: ombros para trás, cabeça para cima e até a respiração controlada. (Isso devo dizer que já é exagero demais, né, Tayler?), mas quem sou eu para julgá-lo. Impressão minha ou seus olhos puxados estavam mais puxados ainda?",
 
