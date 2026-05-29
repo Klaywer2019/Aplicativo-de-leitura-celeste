@@ -1,5 +1,5 @@
 const textoCapitulo3 = [
-    "<h2>Capítulo 3 — KARMERUS</h2><br><br>E voltamos para o centro da vila. Esse lugar me traz tanta alegria... Fui irônico, claro. Mas até que o movimento estava tranquilo hoje; desde que começaram os problemas das ilhas e com os cristais, as ruas andavam vazias, então não posso reclamar.",
+    "<h2>Capítulo 3 — A Decisão do Capitão</h2><br><br>E voltamos para o centro da vila. Esse lugar me traz tanta alegria... Fui irônico, claro. Mas até que o movimento estava tranquilo hoje; desde que começaram os problemas das ilhas e com os cristais, as ruas andavam vazias, então não posso reclamar.",
 
     "Lembro como se fosse esses dias: o centro da vila era cheio de pessoas e a cidade, por mais que fosse uma ilha de deserto, ainda tinha uma vegetação linda. A vila era cheirosa e o ar era muito agradável; aqui era um lugar de alegria e com muita energia positiva. Agora, Tenepress parece uma ilha fantasma.",
 
@@ -7,7 +7,7 @@ const textoCapitulo3 = [
 
     "A loja em que fomos foi a de criação de equipamentos, onde a Tasha trabalha. Ela é gênia em criar equipamentos com cristais energizados e entende muito de cristais com energia. Infelizmente, ela não consegue arrumar o cristal central da nossa ilha pelo seu tamanho e grande quantidade de energia, mas ela consegue arrumar e criar coisas com a energia pequena de cristais limpos.",
 
-    "E isso é simplesmente incrível! Ela até criou um equipamento para conseguir se comunicar com o dragão dela, que é cego. Entrando na loja, precisamos chamá-la por gestos, pois ela é surda. Pelo que soube, sua surdez aconteceu por conta da explosão da ilha dela. Então precisamos fazer gestos, mas se a gente quiser falar com ela sem precisar escrever, precisaríamos berrar para ela ouvir um pouco.",
+    "E isso é simplesmente incrível! Ela até criou um equipamento para conseguir se comunicação com o dragão dela, que é cego. Entrando na loja, precisamos chamá-la por gestos, pois ela é surda. Pelo que soube, sua surdez aconteceu por conta da explosão da ilha dela. Então precisamos fazer gestos, mas se a gente quiser falar com ela sem precisar escrever, precisaríamos berrar para ela ouvir um pouco.",
 
     "Tasha, ao nos avistar, veio até nós com um sorriso no rosto — um sorriso largo que combinava muito com sua personalidade amorosa e calma, algo completamente oposto de mim. Por que meu coração começou a ficar mais acelerado? Ah é, eu esqueci de dar comida para o Ardi. Será que ele vai me odiar por isso? Se bem que já é a segunda vez que esqueço. Droga de problema.",
 
@@ -15,7 +15,7 @@ const textoCapitulo3 = [
 
     "A Tasha veio até a gente, mas logo se virou e levantou o dedo, indicando para esperarmos. Depois, ela voltou com um caderninho que sempre levava consigo para se comunicar. Tasha nos cumprimentou escrevendo no caderno e Alina fez o mesmo. Tasha me viu andando de um lado para o outro e escreveu no caderninho, perguntando para Tayler e Alina se eu estava bem.",
 
-    "Todos eles viraram para mi e, depois, o Tayler me perguntou:<br><br>— Tá tudo bem aí, canga? — Ele arqueou a sobrancelha.<br><br>Na hora parei de andar e me virei para eles. Acho que minha cara não estava muito agradável, já que a Alina e a Tasha deram um saltinho leve para trás quando me viram.",
+    "Todos eles viraram para mim e, depois, o Tayler me perguntou:<br><br>— Tá tudo bem aí, canga? — Ele arqueou a sobrancelha.<br><br>Na hora parei de andar e me virei para eles. Acho que minha cara não estava muito agradável, já que a Alina e a Tasha deram um saltinho leve para trás quando me viram.",
 
     "O Tayler apenas entendeu que eu estava ansioso e querendo sair dali antes que eu falasse besteira por conta do nervosismo. Então ele virou para as meninas e falou que a gente ia sair rapidão porque esquecemos algo importante lá fora. A Alina levantou uma sobrancelha, desconfiada, mas apenas acenou com a cabeça e virou para a Tasha de novo para explicar a situação. O Tayler veio até mim para a gente sair.",
 
@@ -37,11 +37,11 @@ const textoCapitulo3 = [
 
     "A Alina parou um pouco e escreveu no quadro negro que tinha atrás dela para a Tasha entender bem a pergunta. Depois, virou-se e começou a apontar para as letras e desenhos que fez:<br><br>— Existem dois cristais raros que ajudam a reter calor e nos protegem da radiação gama, pelo menos por algumas horas. E como o tempo também passa mais rápido na Área Negra, vai ser mais fácil atravessar rápido.",
 
-    "Alina deu uma parada, pegou um copo de água, bebeu e voltou a explicar:<br><br>— O Cristal Ígneo ajuda a ajustar nossa temperatura térmica para o ambiente em que estamos. Claro, dura apenas algumas horas, mas vai nos ajudar a chegar na primeira ilha do continente Fnutte.<br><br>A Alina deu tanta informação que acabei me perdendo na metade da explicação. Olhei para o Tayler e ele estava com a cabeça inclinada e a mão no queixo, pensando. É, somos dois.",
+    "Alina deu uma parada, pegou um copo de água, beige e voltou a explicar:<br><br>— O Cristal Ígneo ajuda a ajustar nossa temperatura térmica para o ambiente em que estamos. Claro, dura apenas algumas horas, mas vai nos ajudar a chegar na primeira ilha do continente Fnutte.<br><br>A Alina deu tanta informação que acabei me perdendo na metade da explicação. Olhei para o Tayler e ele estava com a cabeça inclinada e a mão no queixo, pensando. É, somos dois.",
 
-    "— Ah, entendi! Então, if tivermos esses dois tipos de cristal, podemos passar para o continente Fnutte e chegar em segurança no nosso destino sem problemas de radiação e temperatura. Entendi certo? — perguntou Adalha.<br><br>Alina concordou com um sorrisinho. As únicas que entenderam essa explicação complexa foram Adalha e Tasha. Como elas conseguem entender essas coisas tão rápido? Principalmente a Adalha, que escuta tudo errado.",
+    "— Ah, entendi! Então, se tivermos esses dois tipos de cristal, podemos passar para o continente Fnutte e chegar em segurança no nosso destino sem problemas de radiação e temperatura. Entendi certo? — perguntou Adalha.<br><br>Alina concordou com um sorrisinho. As únicas que entenderam essa explicação complexa foram Adalha e Tasha. Como elas conseguem entender essas coisas tão rápido? Principalmente a Adalha, que escuta tudo errado.",
 
-    "A Tasha se levantou e foi até o quadro escrever. Ela explicou que os Cristais Ígneos são comuns em ilhas perto da fronteira do continente, então encontraríamos esse cristal na Ilha de gale, perto da Área Negra. Seria nossa primeira parada.<br><br>— Tá, entendemos que precisamos desse tal Cristal Ígneo. Mas e o cristal que vai nos proteger da radiação gama? — perguntei, já que esse cristal é raro.",
+    "A Tasha se levantou e foi até o quadro escrever. Ela explicou que os Cristais Ígneos são comuns em ilhas perto da fronteira do continente, então encontraríamos esse cristal na Ilha de Gale, perto da Área Negra. Seria nossa primeira parada.<br><br>— Tá, entendemos que precisamos desse tal Cristal Ígneo. Mas e o cristal que vai nos proteger da radiação gama? — perguntei, já que esse cristal é raro.",
 
     "Alina escreveu para a Tasha explicar. Tasha pegou o giz e explicou que esses cristais são raros justamente por só existirem em Áreas Negras, mas podem aparecer em lugares com elementos descontrolados. Uma das zonas que ela citou foi a Zona de Raijin, no continente Shu. Não fica muito longe de onde estamos — literalmente algumas ilhas abaixo.",
 
