@@ -1,5 +1,5 @@
 const textoCapitulo3 = [
-    "<h2>Capítulo 3 — A Decisão do Capitão</h2><br><br>E voltamos para o centro da vila. Esse lugar me traz tanta alegria... Fui irônico, claro. Mas até que o movimento estava tranquilo hoje; desde que começaram os problemas das ilhas e com os cristais, as ruas andavam vazias, então não posso reclamar.",
+    "<h2>Capítulo 3 — Karmerus </h2><br><br>E voltamos para o centro da vila. Esse lugar me traz tanta alegria... Fui irônico, claro. Mas até que o movimento estava tranquilo hoje; desde que começaram os problemas das ilhas e com os cristais, as ruas andavam vazias, então não posso reclamar.",
 
     "Lembro como se fosse esses dias: o centro da vila era cheio de pessoas e a cidade, por mais que fosse uma ilha de deserto, ainda tinha uma vegetação linda. A vila era cheirosa e o ar era muito agradável; aqui era um lugar de alegria e com muita energia positiva. Agora, Tenepress parece uma ilha fantasma.",
 
