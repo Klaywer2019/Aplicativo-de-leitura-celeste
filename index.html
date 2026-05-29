@@ -142,15 +142,15 @@
     <div class="container">
         <header>
             <h1>Celeste Dragons</h1>
-            <!-- 🗺️ O menu que vai carregar os capítulos dinamicamente -->
+            <!-- 🗺️ O menu com os nomes oficiais dos seus capítulos atualizados -->
             <select class="seletor-capitulo" id="menuCapitulo" onchange="trocarDeCapitulo()">
                 <option value="1">Capítulo 1 — O Vislumbre de Tenepress</option>
-                <option value="2">Capítulo 2 — [Nome do Cap 2]</option>
-                <option value="3">Capítulo 3 — [Nome do Cap 3]</option>
+                <option value="2">Capítulo 2 — A Mente de Combate e os Mapas</option>
+                <option value="3">Capítulo 3 — A Decisão do Capitão</option>
             </select>
         </header>
 
-        <!-- 📖 ÁREA DE TEXTO TOTALMENTE LIMPA (O JS vai injetar os textos aqui) -->
+        <!-- 📖 ÁREA DE TEXTO TOTALMENTE LIMPA -->
         <div class="conteudo-pagina" id="areaTexto"></div>
 
         <!-- Navegação inferior -->
@@ -161,7 +161,7 @@
         </div>
 
         <footer>
-            ATENÇÃO: Esse livro está em desenvolvimento, e está sendo escrito por uma aluna do ensino médio com dislexia, então sim, pode ter erros de escrita e interpretação, mais espero que gostem mesmo assim de todo o livro😁. espero que gostem e divirtam-se. atenciosamente: a autora.
+            ATENÇÃO: Esse livro está em desenvolvimento, e está sendo escrito por uma aluna do ensino médio com dislexia, então sim, pode ter erros de escrita e interpretação, mas espero que gostem mesmo assim de todo o livro😁. espero que gostem e divirtam-se. atenciosamente: a autora.
             <br><br>
             © 2026 Jemima Keise Santos Cruz. Todos os direitos reservados.
             <br>Plágio é crime (Lei nº 9.610/98).
@@ -169,23 +169,20 @@
         </footer>
     </div>
 
-    <!-- 🔗 IMPORTANDO AS SUAS PASTAS DE CAPÍTULOS JS -->
-    <script src="capitulos/capitulo1.js"></script>
-    <script src="capitulos/capitulo2.js"></script>
-    <script src="capitulos/capitulo3.js"></script>
+    <!-- 🔗 CORREÇÃO DOS SCRIPTS: Importando direto da mesma pasta para evitar erros de diretório no GitHub -->
+    <script src="capitulo1.js"></script>
+    <script src="capitulo2.js"></script>
+    <script src="capitulo3.js"></script>
 
     <script>
-        // Lógica do App de Leitura Dinâmico
         let paginaAtual = 0;
         let textoDoCapituloAtual = [];
 
-        // Função que renderiza o texto na tela
         function carregarCapitulo(numeroCapitulo) {
             const areaTexto = document.getElementById('areaTexto');
-            areaTexto.innerHTML = ''; // Limpa o capítulo anterior
-            paginaAtual = 0; // Volta para a página 1
+            areaTexto.innerHTML = ''; 
+            paginaAtual = 0; 
 
-            // 🛠️ CORREÇÃO 1: Verificação de segurança caso as variáveis do arquivo JS venham vazias ou não existam
             try {
                 if (numeroCapitulo === '1') textoDoCapituloAtual = typeof textoCapitulo1 !== 'undefined' ? textoCapitulo1 : [];
                 if (numeroCapitulo === '2') textoDoCapituloAtual = typeof textoCapitulo2 !== 'undefined' ? textoCapitulo2 : [];
@@ -194,18 +191,16 @@
                 textoDoCapituloAtual = [];
             }
 
-            // Se o capítulo estiver vazio, avisa na tela e evita o bug do 0
             if (!textoDoCapituloAtual || textoDoCapituloAtual.length === 0) {
                 areaTexto.innerHTML = '<p style="text-align:center; color:#ffb74d;">Carregando texto ou capítulo indisponível...</p>';
                 atualizarInterface();
                 return;
             }
 
-            // Transforma os textos do arquivo JS em tags <p> dentro do HTML
             textoDoCapituloAtual.forEach((textoPagina, index) => {
                 const p = document.createElement('p');
                 p.className = 'paragrafo-livro';
-                if (index === 0) p.classList.add('ativo'); // Ativa só a pág 1
+                if (index === 0) p.classList.add('ativo'); 
                 p.innerHTML = textoPagina;
                 areaTexto.appendChild(p);
             });
@@ -217,7 +212,6 @@
             const paragrafos = document.querySelectorAll('.paragrafo-livro');
             const totalPaginas = paragrafos.length;
 
-            // 🛠️ CORREÇÃO 2: Se não houver páginas carregadas, evita mostrar "Pág. 1 de 0" e travar os botões
             if (totalPaginas === 0) {
                 document.getElementById('indicadorProgresso').innerText = "Carregando...";
                 document.getElementById('btnVoltar').disabled = true;
@@ -235,15 +229,12 @@
 
             document.getElementById('indicadorProgresso').innerText = `Pág. ${paginaAtual + 1} de ${totalPaginas}`;
             document.getElementById('btnVoltar').disabled = (paginaAtual === 0);
-            
-            // 🛠️ CORREÇÃO 3: Impede o botão Avançar de avançar infinitamente se chegar na última página real
             document.getElementById('btnAvancar').disabled = (paginaAtual === totalPaginas - 1);
         }
 
         function mudarPagina(direcao) {
             const totalPaginas = document.querySelectorAll('.paragrafo-livro').length;
             
-            // Trava de segurança para não ultrapassar os limites reais
             if (direcao === 1 && paginaAtual >= totalPaginas - 1) return;
             if (direcao === -1 && paginaAtual <= 0) return;
 
@@ -256,22 +247,19 @@
             carregarCapitulo(capituloSelecionado);
         }
 
-        // Inicializa o site carregando o capítulo 1 automaticamente
         window.onload = () => {
             carregarCapitulo('1');
         };
 
-        // 🛡️ ANTICÓPIA: Impede clique com botão direito
+        // 🛡️ ANTICÓPIA
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // 🛡️ ANTICÓPIA: Bloqueia Ctrl+C, Ctrl+A, Ctrl+S e Ctrl+U
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && (e.key === 'c' || e.key === 'a' || e.key === 'u' || e.key === 's')) {
                 e.preventDefault();
             }
         });
 
-        // 🪤 PEGADINHA NO CTRL+C: Injeta seus direitos autorais se burlarem
         document.addEventListener('copy', (e) => {
             e.preventDefault();
             const textoProtegido = window.getSelection().toString() + 
@@ -279,7 +267,6 @@
             e.clipboardData.setData('text/plain', textoProtegido);
         });
 
-        // 🚫 BLOQUEIO DE TECLA PRINT SCREEN (PC)
         window.addEventListener('keyup', (e) => {
             if (e.key === 'PrintScreen') {
                 navigator.clipboard.writeText(''); 
